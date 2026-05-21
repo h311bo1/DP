@@ -1,1 +1,13 @@
-test
+//LOG IN (SINGLTON)
+class logger {
+
+
+
+}
+
+class program {
+
+    static() {
+        return("app started");
+    }
+}

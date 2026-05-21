@@ -33,37 +33,3 @@ class ChildPricing extends PricingStrategy {
     return 5;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//LOG IN (SINGLTON)
-class logger {
-
-
-
-}
-
-class program {
-
-    static() {
-        return("app started");
-    }
-}
