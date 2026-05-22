@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 
+// use-case: ticket scanning and access control
 
-//               Observer
+//               Observer (Behavioral Pattern)
 class TicketScanningEvent {
   constructor() {
     this.observers = []; // store all listeners
@@ -22,7 +23,7 @@ class TicketScanningEvent {
     this.observers.forEach((observer) => observer(ticket));
   }
 }
-//          Proxy
+//          Proxy (Structural Pattern)
 class TicketScannerProxy {
   // save our scanner and create for it ticketList to prevent duplicates
   constructor(scanner) {
@@ -53,13 +54,11 @@ function logs(ticket) {
   return console.log(`Log: ${ticket} - ticket has been scanned`);
 }
 
-
 // creat Observer scanner and add functions listeners to it
 let scanner = new TicketScanningEvent();
 scanner.add(gates);
 scanner.add(updates);
 scanner.add(logs);
-
 
 // wrap scanner in proxy turnstile
 let turnstile = new TicketScannerProxy(scanner);
@@ -68,6 +67,3 @@ turnstile.scan(123); // allowed
 turnstile.scan(123); // denied
 turnstile.scan("t-321"); // allowed
 turnstile.scan("t-321"); // denied
-
-
-
