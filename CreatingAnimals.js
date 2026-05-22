@@ -3,50 +3,41 @@
 
 class lion {
     constructor() {
-        this.animal
-            animal = "lion"
-    
+        this.animal = "lion";
     }
 }
 
 class cat {
     constructor() {
-        this.animal
-            animal = "cat"
-    
+        this.animal = "cat";
     }
 }
 
 class dog {
     constructor() {
-        this.animal
-            animal = "dog"
-    
+        this.animal = "dog";
     }
 }
 
 class fish   {
-    construtor() {
-        this.animal 
-            animal = "dog"
-
-
+    constructor() {
+        this.animal = "fish";
     }
 }
 
 class AnimalFactory {
-    static CreateAnimal(type){
+    static CreateAnimal(type) {
         switch(type) {
-            case animal: "lion"
+            case type: "lion"
                 return new lion ();
 
-            case animal: "cat"
+            case type: "cat"
                 return new cat ();
 
-            case animal: "dog"
+            case type: "dog"
                 return new dog ();
                 
-            case animal: "fish"
+            case type: "fish"
                 return new fish ();
                 
         default:
@@ -55,6 +46,9 @@ class AnimalFactory {
         }
     }
 }
+
+const animal = AnimalFactory.CreateAnimal('lion');
+console.log(animal);
 
 //?????
     //idk man 
