@@ -25,6 +25,14 @@ class dog {
     }
 }
 
+class fish   {
+    construtor() {
+        this.animal 
+            animal = "dog"
+
+
+    }
+}
 
 class AnimalFactory {
     static CreateAnimal(type){
@@ -37,6 +45,9 @@ class AnimalFactory {
 
             case animal: "dog"
                 return new dog ();
+                
+            case animal: "fish"
+                return new fish ();
                 
         default:
             console.log("animal not found")
