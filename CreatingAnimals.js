@@ -5,11 +5,17 @@ class lion {
     constructor() {
         this.animal = "lion";
     }
+    emote() {
+        console.log("roar");
+    }
 }
 
 class cat {
     constructor() {
         this.animal = "cat";
+    }
+        emote() {
+        console.log("meow");
     }
 }
 
@@ -17,11 +23,18 @@ class dog {
     constructor() {
         this.animal = "dog";
     }
+        emote() {
+        console.log("woof");
+    }
 }
 
 class fish   {
     constructor() {
         this.animal = "fish";
+    }
+
+    emote() {
+        console.log(`...`);
     }
 }
 
@@ -49,6 +62,7 @@ class AnimalFactory {
 
 const animal = AnimalFactory.CreateAnimal('lion');
 console.log(animal);
+animal.emote();
 
 //?????
     //idk man 
