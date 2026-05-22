@@ -1,5 +1,13 @@
 // creating an online order
 class Order {
+	userId;
+	item;
+	quantity;
+	shippingAddress;
+	billingAddress;
+	shipping;
+	payment;
+
 	constructor(userId) {
 		this.order = {userId};
 	}
@@ -14,8 +22,9 @@ class Order {
 		return this;
 	}
 
-	addAddress(address) {
-		this.order.address = address;
+	// optional
+	addShippingAddress(shippingAddress) {
+		this.order.shippingAddress = shippingAddress;
 		return this;
 	}
 
@@ -32,7 +41,13 @@ class Order {
 		return this;
 	}
 
+	addComment(comment) { // optional
+		this.order.comment = comment;
+	}
+
 	build() {
+		if (!this.order.billingAddress)
+			this.order.billingAddress = this.order.shippingAddress;
 		return this.order;
 	}
 }
@@ -40,9 +55,9 @@ class Order {
 const order = new Order('122')
 	.addItem('Charging Cable')
 	.addQuantity(2)
-	.addAddress('100 First Street, Prague, Czechia')
+	.addShippingAddress('100 First Street, Prague, Czechia')
 	.addShipping('USPS')
 	.addPayment('500')
 	.build();
 
-console.log(order);
+console.log(JSON.stringify(order));
